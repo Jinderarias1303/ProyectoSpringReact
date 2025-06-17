@@ -17,6 +17,7 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nom_cliente_empresa;
 
     @Column(unique = true) 
@@ -32,5 +33,5 @@ public class Cliente {
     }
 
     @Enumerated(EnumType.STRING) // esto es para que se guarde el nombre del enum en la base de datos como string
-    private estado Estado;
+    private estado estado;
 }
