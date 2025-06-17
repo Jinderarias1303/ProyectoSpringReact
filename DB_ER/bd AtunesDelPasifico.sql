@@ -1,4 +1,5 @@
 drop database if exists AtunesDelPacifico;
+
 create database AtunesDelPacifico;
 use AtunesDelPacifico;
 
@@ -59,7 +60,7 @@ CREATE TABLE detalle_pedido (
 );
 
 CREATE TABLE roles (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
     tipo_rol ENUM('Cliente', 'Operador', 'Administrador') NOT NULL
 );
 
@@ -67,7 +68,7 @@ CREATE TABLE usuario (
     id INT PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(50) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
-    id_rol INT NOT NULL,
+    id_rol BIGINT NOT NULL,
     estado ENUM('Activo', 'Inactivo') DEFAULT 'Activo',
     FOREIGN KEY (id_rol) REFERENCES roles(id)
 );
