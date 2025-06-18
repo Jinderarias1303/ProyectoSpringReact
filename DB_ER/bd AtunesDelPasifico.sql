@@ -19,7 +19,7 @@ CREATE TABLE lote (
 );
 
 
-CREATE TABLE producto_lote (
+CREATE TABLE productoLote (
     id INT PRIMARY KEY AUTO_INCREMENT,
     idProducto INT NOT NULL,
     idLote INT NOT NULL,
@@ -48,8 +48,7 @@ CREATE TABLE pedido (
     FOREIGN KEY (idCliente) REFERENCES cliente(id)
 );
 
-
-CREATE TABLE detalle_pedido (
+CREATE TABLE detallePedido (
     id INT PRIMARY KEY AUTO_INCREMENT,
     idPedido INT NOT NULL,
     idProducto INT NOT NULL,
@@ -78,7 +77,7 @@ CREATE TABLE usuario (
 	  	descripcion TEXT NOT NULL
 	);
 
-CREATE TABLE lote_defectuoso (
+CREATE TABLE loteDefectuoso (
     id INT PRIMARY KEY AUTO_INCREMENT,
     idLote INT NOT NULL,
     idDefecto INT NOT NULL,
