@@ -16,16 +16,14 @@ public class ProductoService {
     @Autowired
     private RepositoryProducto repositoryProducto;
 
-    // Listar todos los productos
     @Transactional(readOnly = true)
     public List<Producto> listarTodosLosProductos() {
         return repositoryProducto.findAll();
     }
-    
-    // Guardar o actualizar producto
+
     @Transactional
     public Producto guardarProducto(Producto producto) {
-        if (producto == null || producto.getNombre_producto() == null || producto.getNombre_producto().isEmpty()) {
+        if (producto == null || producto.getNombreProducto() == null || producto.getNombreProducto().isEmpty()) {
             throw new IllegalArgumentException("El producto debe tener un nombre válido.");
         }
         if (producto.getPrecio() == null || producto.getPrecio().doubleValue() < 0) {
@@ -34,7 +32,6 @@ public class ProductoService {
         return repositoryProducto.save(producto);
     }
 
-    // Eliminar producto por ID
     @Transactional
     public void eliminarProducto(Long id) {
         if (id == null) {
@@ -46,12 +43,21 @@ public class ProductoService {
         repositoryProducto.deleteById(id);
     }
 
-    // Buscar producto por ID
     @Transactional(readOnly = true)
     public Optional<Producto> buscarPorId(Long id) {
         if (id == null) {
             throw new IllegalArgumentException("El ID no puede ser nulo.");
         }
         return repositoryProducto.findById(id);
+    }
+
+    @Transactional(readOnly = true) 
+    public List<Producto> buscarPorNombre(String nombre) {
+        return repositoryProducto.findByNombreProducto(nombre);
+    }
+
+    @Transactional(readOnly = true)
+    public boolean existeProducto(Long id) {
+        return repositoryProducto.existsById(id);
     }
 }

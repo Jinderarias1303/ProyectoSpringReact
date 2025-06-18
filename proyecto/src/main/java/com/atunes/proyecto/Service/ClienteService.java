@@ -55,8 +55,12 @@ public class ClienteService {
         if (clientes.isEmpty()) {
             throw new IllegalArgumentException("No se encontró ningún cliente con la identificación: " + identificacion);
         }
-
         return clientes;
     }
+    
+    public boolean existeCliente(Long id) {
+        return repositoryCliente.existsById(id);
+    }
+
 }
 
