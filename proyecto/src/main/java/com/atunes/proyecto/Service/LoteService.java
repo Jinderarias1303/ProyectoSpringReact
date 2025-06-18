@@ -56,14 +56,15 @@ public class LoteService {
     // Buscar lotes por estado
     @Transactional(readOnly = true)
     public List<Lote> buscarLotesPorEstado(String estado) {
-        Lote.tipo tipoEnum;
+        Lote.Estado estadoEnum;
         try {
-            tipoEnum = Lote.tipo.valueOf(estado);
+            estadoEnum = Lote.Estado.valueOf(estado);
         } catch (IllegalArgumentException | NullPointerException e) {
             throw new IllegalArgumentException("Estado inválido: " + estado);
         }
-        return repositoryLote.findByTipo(tipoEnum); // necesitas este método en el repositorio
+        return repositoryLote.findByEstado(estadoEnum);
     }
+
 
     // Buscar lotes por tipo
     @Transactional(readOnly = true)

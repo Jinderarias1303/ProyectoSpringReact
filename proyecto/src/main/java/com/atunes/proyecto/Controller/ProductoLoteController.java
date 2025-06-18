@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.atunes.proyecto.Entity.Producto_lote;
+import com.atunes.proyecto.Entity.ProductoLote;
 import com.atunes.proyecto.Service.ProductoLoteService;
 
 @RestController
@@ -26,22 +26,22 @@ public class ProductoLoteController {
     private ProductoLoteService productoLoteService;
 
     @GetMapping
-    public ResponseEntity<List<Producto_lote>> getAllProductoLotes() {
-        List<Producto_lote> lista = productoLoteService.listarTodos();
+    public ResponseEntity<List<ProductoLote>> getAllProductoLotes() {
+        List<ProductoLote> lista = productoLoteService.listarTodos();
         return new ResponseEntity<>(lista, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Producto_lote> getProductoLoteById(@PathVariable Long id) {
-        Optional<Producto_lote> productoLote = productoLoteService.buscarPorId(id);
+    public ResponseEntity<ProductoLote> getProductoLoteById(@PathVariable Long id) {
+        Optional<ProductoLote> productoLote = productoLoteService.buscarPorId(id);
         return productoLote.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
                            .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @PostMapping
-    public ResponseEntity<Producto_lote> crearProductoLote(@RequestBody Producto_lote productoLote) {
+    public ResponseEntity<ProductoLote> crearProductoLote(@RequestBody ProductoLote productoLote) {
         try {
-            Producto_lote nuevo = productoLoteService.guardar(productoLote);
+            ProductoLote nuevo = productoLoteService.guardar(productoLote);
             return new ResponseEntity<>(nuevo, HttpStatus.CREATED);
         } catch (IllegalArgumentException e) {
             return new ResponseEntity<>( HttpStatus.BAD_REQUEST);
@@ -49,12 +49,12 @@ public class ProductoLoteController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Producto_lote> actualizarProductoLote(@PathVariable Long id, @RequestBody Producto_lote productoLote) {
+    public ResponseEntity<ProductoLote> actualizarProductoLote(@PathVariable Long id, @RequestBody ProductoLote productoLote) {
         if (id == null || !id.equals(productoLote.getId())) {
             return new ResponseEntity<>( HttpStatus.BAD_REQUEST);
         }
         try {
-            Producto_lote actualizado = productoLoteService.guardar(productoLote);
+            ProductoLote actualizado = productoLoteService.guardar(productoLote);
             return new ResponseEntity<>(actualizado, HttpStatus.OK);
         } catch (IllegalArgumentException e) {
             return new ResponseEntity<>( HttpStatus.BAD_REQUEST);

@@ -36,9 +36,10 @@ public class RolesService {
     //guardar o actualizar
     @Transactional
     public Roles guardarRol(Roles rol) {
-        if (rol == null || rol.getTipo_rol() == null || rol.getTipo_rol().trim().isEmpty()) {
+        if (rol == null || rol.getTipoRol() == null || rol.getTipoRol().trim().isEmpty()) {
             throw new IllegalArgumentException("El rol debe tener un nombre válido.");
         }
         return repositoryRoles.save(rol);
     }
+
 }

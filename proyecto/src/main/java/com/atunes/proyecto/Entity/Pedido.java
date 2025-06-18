@@ -23,10 +23,10 @@ public class Pedido {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "id_cliente", referencedColumnName = "id")
-    private Cliente id_cliente;
+    @JoinColumn(name = "id_cliente") // nombre de la columna FK
+    private Cliente cliente;
 
-    private int precio_total;
+    private int precioTotal;
 
     public enum EstadoEntrega {
         Pendiente,
@@ -34,10 +34,10 @@ public class Pedido {
         Entregado,
         Cancelado
     }
+
     @Enumerated(EnumType.STRING)
-    private EstadoEntrega estado_entrega;
+    private EstadoEntrega estadoEntrega;
 
-    private Date fecha_entrega;
-    private Date fecha_pedido;
-
+    private Date fechaEntrega;
+    private Date fechaPedido;
 }

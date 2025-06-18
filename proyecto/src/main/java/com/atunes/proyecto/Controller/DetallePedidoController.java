@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.atunes.proyecto.Entity.Detalle_pedido;
+import com.atunes.proyecto.Entity.DetallePedido;
 import com.atunes.proyecto.Service.DetallePedidoService;
 
 @RestController
@@ -26,22 +26,22 @@ public class DetallePedidoController {
     private DetallePedidoService detallePedidoService;
 
     @GetMapping
-    public ResponseEntity<List<Detalle_pedido>> getAllDetallesPedido() {
-        List<Detalle_pedido> detalles = detallePedidoService.listarTodos();
+    public ResponseEntity<List<DetallePedido>> getAllDetallesPedido() {
+        List<DetallePedido> detalles = detallePedidoService.listarTodos();
         return new ResponseEntity<>(detalles, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Detalle_pedido> getDetallePedidoById(@PathVariable Long id) {
-        Optional<Detalle_pedido> detalle = detallePedidoService.buscarPorId(id);
+    public ResponseEntity<DetallePedido> getDetallePedidoById(@PathVariable Long id) {
+        Optional<DetallePedido> detalle = detallePedidoService.buscarPorId(id);
         return detalle.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
                       .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @PostMapping
-    public ResponseEntity<Detalle_pedido> crearDetallePedido(@RequestBody Detalle_pedido detallePedido) {
+    public ResponseEntity<DetallePedido> crearDetallePedido(@RequestBody DetallePedido detallePedido) {
         try {
-            Detalle_pedido nuevo = detallePedidoService.guardar(detallePedido);
+            DetallePedido nuevo = detallePedidoService.guardar(detallePedido);
             return new ResponseEntity<>(nuevo, HttpStatus.CREATED);
         } catch (IllegalArgumentException e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -49,12 +49,12 @@ public class DetallePedidoController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Detalle_pedido> guardar(@PathVariable Long id, @RequestBody Detalle_pedido detallePedido) {
+    public ResponseEntity<DetallePedido> guardar(@PathVariable Long id, @RequestBody DetallePedido detallePedido) {
         if (id == null || !id.equals(detallePedido.getId())) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         try {
-            Detalle_pedido actualizado = detallePedidoService.guardar(detallePedido);
+            DetallePedido actualizado = detallePedidoService.guardar(detallePedido);
             return new ResponseEntity<>(actualizado, HttpStatus.OK);
         } catch (IllegalArgumentException e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);

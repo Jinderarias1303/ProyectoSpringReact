@@ -21,8 +21,8 @@ public class Lote {
     private Long id;
 
     @Column(unique = true)  // se pone para que el codigo_lote sea unico
-    private int codigo_lote;
-    private Date fecha_produccion;
+    private int codigoLote;
+    private Date fechaProduccion;
 
     public enum tipo{
         atun_en_aceite,
@@ -30,14 +30,14 @@ public class Lote {
         atun_en_salsa,
     }
     @Enumerated(EnumType.STRING)  // esto es para que se guarde el nombre del enum en la base de datos como string
-    private tipo Tipo;
+    private tipo tipo;
 
-    private int cantidad_producida;
+    private int cantidadProducida;
 
     public enum Estado{
         Disponible,
         vendido,
-        Defectuoso,
+        Defectuoso
     }
     @Enumerated(EnumType.STRING)
     private Estado estado;

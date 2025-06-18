@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.atunes.proyecto.Entity.Detalle_pedido;
+import com.atunes.proyecto.Entity.DetallePedido;
 import com.atunes.proyecto.Repository.RepositoryDetallePedido;
 
 import jakarta.transaction.Transactional;
@@ -19,13 +19,13 @@ public class DetallePedidoService {
 
     // Listar todos los detalles de pedido
     @Transactional
-    public List<Detalle_pedido> listarTodos() {
+    public List<DetallePedido> listarTodos() {
         return repositoryDetallePedido.findAll();
     }
 
     // Buscar por ID
     @Transactional
-    public Optional<Detalle_pedido> buscarPorId(Long id) {
+    public Optional<DetallePedido> buscarPorId(Long id) {
         if (id == null) {
             throw new IllegalArgumentException("El ID no puede ser nulo.");
         }
@@ -34,7 +34,7 @@ public class DetallePedidoService {
 
     // Guardar o actualizar un detalle de pedido
     @Transactional
-    public Detalle_pedido guardar(Detalle_pedido detallePedido) {
+    public DetallePedido guardar(DetallePedido detallePedido) {
         if (detallePedido == null) {
             throw new IllegalArgumentException("El detalle de pedido no puede ser nulo.");
         }

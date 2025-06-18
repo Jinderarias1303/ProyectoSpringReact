@@ -12,16 +12,16 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "lotes_defectuosos")
-public class Lote_defectuoso {
+public class LoteDefectuoso {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "id_lote", referencedColumnName = "id")
-    private Lote id_lote;
+    @JoinColumn(name = "id_lote")
+    private Lote idLote;
 
     @ManyToOne
     @JoinColumn(name = "id_defecto", referencedColumnName = "id")
-    private Defecto id_defecto;
+    private Defecto idDefecto;
 }

@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.atunes.proyecto.Entity.Producto_lote;
+import com.atunes.proyecto.Entity.ProductoLote;
 import com.atunes.proyecto.Repository.RepositoryProductoLote;
 
 import jakarta.transaction.Transactional;
@@ -19,13 +19,13 @@ public class ProductoLoteService {
 
     // Listar todos los registros de producto-lote
     @Transactional
-    public List<Producto_lote> listarTodos() {
+    public List<ProductoLote> listarTodos() {
         return repositoryProductoLote.findAll();
     }
 
     // Buscar por ID
     @Transactional
-    public Optional<Producto_lote> buscarPorId(Long id) {
+    public Optional<ProductoLote> buscarPorId(Long id) {
         if (id == null) {
             throw new IllegalArgumentException("El ID no puede ser nulo.");
         }
@@ -34,7 +34,7 @@ public class ProductoLoteService {
 
     // Guardar o actualizar producto-lote
     @Transactional
-    public Producto_lote guardar(Producto_lote productoLote) {
+    public ProductoLote guardar(ProductoLote productoLote) {
         if (productoLote == null) {
             throw new IllegalArgumentException("El producto-lote no puede ser nulo.");
         }

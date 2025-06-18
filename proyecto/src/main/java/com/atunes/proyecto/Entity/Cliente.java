@@ -18,10 +18,10 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nom_cliente_empresa;
+    private String nomClienteEmpresa;
 
     @Column(unique = true) 
-    private int identificacion;
+    private String identificacion;
 
     @Column(unique = true)
     private String correo;

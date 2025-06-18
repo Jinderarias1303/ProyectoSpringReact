@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.atunes.proyecto.Entity.Lote_defectuoso;
+import com.atunes.proyecto.Entity.LoteDefectuoso;
 import com.atunes.proyecto.Repository.RepositoryLoteDefectuoso;
 
 import jakarta.transaction.Transactional;
@@ -19,13 +19,13 @@ public class LoteDefectuosoService {
 
     // Listar todos los lotes defectuosos
     @Transactional
-    public List<Lote_defectuoso> listarTodos() {
+    public List<LoteDefectuoso> listarTodos() {
         return repositoryLoteDefectuoso.findAll();
     }
 
     // Buscar por ID
     @Transactional
-    public Optional<Lote_defectuoso> buscarPorId(Long id) {
+    public Optional<LoteDefectuoso> buscarPorId(Long id) {
         if (id == null) {
             throw new IllegalArgumentException("El ID no puede ser nulo.");
         }
@@ -34,7 +34,7 @@ public class LoteDefectuosoService {
 
     // Guardar o actualizar lote defectuoso
     @Transactional
-    public Lote_defectuoso guardar(Lote_defectuoso loteDefectuoso) {
+    public LoteDefectuoso guardar(LoteDefectuoso loteDefectuoso) {
         if (loteDefectuoso == null) {
             throw new IllegalArgumentException("El lote defectuoso no puede ser nulo.");
         }

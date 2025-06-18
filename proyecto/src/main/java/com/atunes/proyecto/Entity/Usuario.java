@@ -30,8 +30,8 @@ public class Usuario {
     private Estado estado;
 
     @ManyToOne
-    @JoinColumn(name = "id_rol", referencedColumnName = "id")
-    private Roles id_rol; 
+    @JoinColumn(name = "id_rol")
+    private Roles idRol; 
 
     public enum Estado {
         Activo,

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.atunes.proyecto.Entity.Lote_defectuoso;
+import com.atunes.proyecto.Entity.LoteDefectuoso;
 import com.atunes.proyecto.Service.LoteDefectuosoService;
 
 @RestController
@@ -26,22 +26,22 @@ public class LoteDefectuosoController {
     private LoteDefectuosoService loteDefectuosoService;
 
     @GetMapping
-    public ResponseEntity<List<Lote_defectuoso>> listarTodos() {
-        List<Lote_defectuoso> lotes = loteDefectuosoService.listarTodos();
+    public ResponseEntity<List<LoteDefectuoso>> listarTodos() {
+        List<LoteDefectuoso> lotes = loteDefectuosoService.listarTodos();
         return new ResponseEntity<>(lotes, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Lote_defectuoso> buscarPorId(@PathVariable Long id) {
-        Optional<Lote_defectuoso> lote = loteDefectuosoService.buscarPorId(id);
+    public ResponseEntity<LoteDefectuoso> buscarPorId(@PathVariable Long id) {
+        Optional<LoteDefectuoso> lote = loteDefectuosoService.buscarPorId(id);
         return lote.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
                    .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @PostMapping
-    public ResponseEntity<Lote_defectuoso> guardar(@RequestBody Lote_defectuoso loteDefectuoso) {
+    public ResponseEntity<LoteDefectuoso> guardar(@RequestBody LoteDefectuoso loteDefectuoso) {
         try {
-            Lote_defectuoso nuevo = loteDefectuosoService.guardar(loteDefectuoso);
+            LoteDefectuoso nuevo = loteDefectuosoService.guardar(loteDefectuoso);
             return new ResponseEntity<>(nuevo, HttpStatus.CREATED);
         } catch (IllegalArgumentException e) {
             return new ResponseEntity<>( HttpStatus.BAD_REQUEST);
@@ -49,12 +49,12 @@ public class LoteDefectuosoController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Lote_defectuoso> guardar(@PathVariable Long id, @RequestBody Lote_defectuoso loteDefectuoso) {
+    public ResponseEntity<LoteDefectuoso> guardar(@PathVariable Long id, @RequestBody LoteDefectuoso loteDefectuoso) {
         if (id == null || !id.equals(loteDefectuoso.getId())) {
             return new ResponseEntity<>( HttpStatus.BAD_REQUEST);
         }
         try {
-            Lote_defectuoso actualizado = loteDefectuosoService.guardar(loteDefectuoso);
+            LoteDefectuoso actualizado = loteDefectuosoService.guardar(loteDefectuoso);
             return new ResponseEntity<>(actualizado, HttpStatus.OK);
         } catch (IllegalArgumentException e) {
             return new ResponseEntity<>( HttpStatus.BAD_REQUEST);

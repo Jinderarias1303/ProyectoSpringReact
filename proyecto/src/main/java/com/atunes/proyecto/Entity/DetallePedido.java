@@ -14,18 +14,18 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "detalle_pedidos")
-public class Detalle_pedido {
+public class DetallePedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     @ManyToOne
     @JoinColumn(name = "id_pedido", referencedColumnName = "id")
-    private Pedido id_pedido;
+    private Pedido pedido;
 
     @ManyToOne
     @JoinColumn(name = "id_producto", referencedColumnName = "id")
-    private Producto id_producto;
+    private Producto producto;
 
     private int cantidad;
     private BigDecimal subtotal;
