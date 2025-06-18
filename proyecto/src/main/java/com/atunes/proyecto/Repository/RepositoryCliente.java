@@ -9,7 +9,7 @@ import java.util.List;
 
 
 public interface RepositoryCliente extends JpaRepository<Cliente, Long> {
-    List<Cliente> findByIdentificacion(int identificacion); // Método para buscar por identificación
+    List<Cliente> findByIdentificacionContainingIgnoreCase(String identificacion); // Método para buscar por identificación
     List<Cliente> findByEstado(estado estado); // Método para buscar por estado  Inactivo o Activo
     
 }

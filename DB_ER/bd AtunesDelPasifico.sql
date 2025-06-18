@@ -32,7 +32,7 @@ CREATE TABLE cliente (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nom_cliente_empresa VARCHAR(50) NOT NULL,
     identificacion INT NOT NULL UNIQUE,
-    correo VARCHAR(100) NOT NULL,
+    correo VARCHAR(100) NOT null UNIQUE,
     telefono VARCHAR(50),
     direccion VARCHAR(150),
     estado ENUM('Activo', 'Inactivo') DEFAULT 'Activo'
