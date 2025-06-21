@@ -11,17 +11,17 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "lotes_defectuosos")
+@Table(name = "loteDefectuoso")
 public class LoteDefectuoso {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "id_lote")
+    @JoinColumn(name = "idLote", referencedColumnName = "id")
     private Lote idLote;
 
     @ManyToOne
-    @JoinColumn(name = "id_defecto", referencedColumnName = "id")
+    @JoinColumn(name = "idDefecto", referencedColumnName = "id")
     private Defecto idDefecto;
 }

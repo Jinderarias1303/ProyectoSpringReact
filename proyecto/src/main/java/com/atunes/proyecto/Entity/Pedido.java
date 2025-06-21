@@ -15,7 +15,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "pedidos")
+@Table(name = "pedido")
 public class Pedido {
 
     @Id
@@ -23,7 +23,7 @@ public class Pedido {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "id_cliente") // nombre de la columna FK
+    @JoinColumn(name = "idCliente", referencedColumnName = "id") // nombre de la columna FK
     private Cliente cliente;
 
     private int precioTotal;

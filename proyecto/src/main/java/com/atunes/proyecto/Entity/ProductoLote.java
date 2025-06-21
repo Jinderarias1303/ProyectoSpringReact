@@ -12,18 +12,18 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "producto_lotes")
+@Table(name = "productoLote")
 public class ProductoLote {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "id_producto", referencedColumnName = "id")
+    @JoinColumn(name = "idProducto", referencedColumnName = "id")
     private Producto idProducto;
 
     @ManyToOne
-    @JoinColumn(name = "id_lote", referencedColumnName = "id")
+    @JoinColumn(name = "idLote", referencedColumnName = "id")
     private Lote idLote;
 
     private int cantidadProducida;
