@@ -19,7 +19,7 @@ import com.atunes.proyecto.Entity.DetallePedido;
 import com.atunes.proyecto.Service.DetallePedidoService;
 
 @RestController
-@RequestMapping("/api/detalles-pedido")
+@RequestMapping("/api/detallePedido")
 public class DetallePedidoController {
 
     @Autowired

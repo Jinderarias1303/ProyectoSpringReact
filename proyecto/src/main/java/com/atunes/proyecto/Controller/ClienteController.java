@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/clientes")
+@RequestMapping("/api/cliente")
 @CrossOrigin(origins = "*") // Esto permite acceso desde frontend React
 public class ClienteController {
 
