@@ -18,10 +18,10 @@ public class LoteDefectuoso {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "idLote", referencedColumnName = "id")
+    @JoinColumn(name = "id_lote", referencedColumnName = "id")
     private Lote idLote;
 
     @ManyToOne
-    @JoinColumn(name = "idDefecto", referencedColumnName = "id")
+    @JoinColumn(name = "id_defecto", referencedColumnName = "id")
     private Defecto idDefecto;
 }

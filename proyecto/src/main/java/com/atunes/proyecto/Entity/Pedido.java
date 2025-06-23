@@ -23,7 +23,7 @@ public class Pedido {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "idCliente", referencedColumnName = "id") // nombre de la columna FK
+    @JoinColumn(name = "id_cliente", referencedColumnName = "id") // nombre de la columna FK
     private Cliente cliente;
 
     private int precioTotal;

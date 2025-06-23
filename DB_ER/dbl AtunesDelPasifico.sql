@@ -55,10 +55,10 @@ INSERT INTO roles (tipoRol) VALUES
 ('Administrador');
 
 -- usuario
-INSERT INTO usuario (username, password, idRol) VALUES
-('cliente01', 'cliente1', 1),
-('operador01', 'operador1', 2),
-('admin01', 'admin1', 3);
+INSERT INTO usuario (username, password, id_rol) VALUES
+('cliente01', '$2a$12$uAhHS1z0G5.J0APNR/t4uemgHQoUJHeo.LgwkIMZikVmwUTTbuCdC', 1),
+('operador01', '$2a$12$zxLednfFKBr6tDycpQTsSeGdWk5iPPpnpo4Uwe5mlIw06IjcJHe6y', 2),
+('admin01', '$2a$12$jFhr7iB5JndaCg/T8q/PcOFNt4T3BtufgCfVgxbnK1BtifJl2/t3q', 3);
 
 -- defecto
 INSERT INTO defecto (descripcion) VALUES

@@ -20,11 +20,11 @@ public class DetallePedido {
     private Long id;
     
     @ManyToOne
-    @JoinColumn(name = "idPedido", referencedColumnName = "id")
+    @JoinColumn(name = "id_pedido", referencedColumnName = "id")
     private Pedido pedido;
 
     @ManyToOne
-    @JoinColumn(name = "idProducto", referencedColumnName = "id")
+    @JoinColumn(name = "id_producto", referencedColumnName = "id")
     private Producto producto;
 
     private int cantidad;

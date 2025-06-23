@@ -19,11 +19,11 @@ public class ProductoLote {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "idProducto", referencedColumnName = "id")
+    @JoinColumn(name = "id_producto", referencedColumnName = "id")
     private Producto idProducto;
 
     @ManyToOne
-    @JoinColumn(name = "idLote", referencedColumnName = "id")
+    @JoinColumn(name = "id_lote", referencedColumnName = "id")
     private Lote idLote;
 
     private int cantidadProducida;
