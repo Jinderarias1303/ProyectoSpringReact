@@ -18,8 +18,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import com.atunes.proyecto.enums.TipoRol; // **NUEVO:** Importar el Enum TipoRol
-
 @Data
 @Builder
 @NoArgsConstructor

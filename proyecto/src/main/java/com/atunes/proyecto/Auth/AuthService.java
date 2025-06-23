@@ -15,8 +15,6 @@ import com.atunes.proyecto.Entity.Usuario.Estado;
 import com.atunes.proyecto.Jwt.JwtService;
 import com.atunes.proyecto.Repository.RepositoryRoles; // Necesitarás un repositorio para Roles
 import com.atunes.proyecto.Repository.RepositoryUsuario;
-import com.atunes.proyecto.enums.TipoRol; // Importa tu Enum TipoRol
-
 import lombok.RequiredArgsConstructor;
 
 @Service
