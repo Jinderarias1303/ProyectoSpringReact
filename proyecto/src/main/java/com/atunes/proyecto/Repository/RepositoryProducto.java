@@ -7,5 +7,5 @@ import com.atunes.proyecto.Entity.Producto;
 
 @Repository
 public interface RepositoryProducto extends JpaRepository<Producto, Long> {
-    List<Producto> findByNombreProducto(String nombre); // usa camelCase como en la entidad
+    List<Producto> findByNombreProducto(String nombreProducto); // usa camelCase como en la entidad
 }

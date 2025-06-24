@@ -19,7 +19,7 @@ import com.atunes.proyecto.Entity.ProductoLote;
 import com.atunes.proyecto.Service.ProductoLoteService;
 
 @RestController
-@RequestMapping("/api/producto-lotes")
+@RequestMapping("/api/productoLote")
 public class ProductoLoteController {
 
     @Autowired

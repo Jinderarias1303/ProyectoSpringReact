@@ -23,7 +23,7 @@ public class ProductoService {
 
     @Transactional
     public Producto guardarProducto(Producto producto) {
-        if (producto == null || producto.getNombreProducto() == null || producto.getNombreProducto().isEmpty()) {
+        if (producto == null || producto.getNombreProducto() == null || producto.getNombreProducto().isEmpty()) { 
             throw new IllegalArgumentException("El producto debe tener un nombre válido.");
         }
         if (producto.getPrecio() == null || producto.getPrecio().doubleValue() < 0) {

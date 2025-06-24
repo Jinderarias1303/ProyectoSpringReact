@@ -18,7 +18,7 @@ import com.atunes.proyecto.Entity.Defecto;
 import com.atunes.proyecto.Service.DefectoService;
 
 @RestController
-@RequestMapping("/api/defectos")
+@RequestMapping("/api/defecto")
 public class DefectoController {
 
     @Autowired

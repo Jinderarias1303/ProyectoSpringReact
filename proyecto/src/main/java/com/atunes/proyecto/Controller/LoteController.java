@@ -19,7 +19,7 @@ import com.atunes.proyecto.Entity.Lote;
 import com.atunes.proyecto.Service.LoteService;
 
 @RestController
-@RequestMapping("/api/lotes")
+@RequestMapping("/api/lote")
 public class LoteController {
 
     @Autowired

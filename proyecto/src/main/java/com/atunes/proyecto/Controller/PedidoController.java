@@ -19,7 +19,7 @@ import com.atunes.proyecto.Entity.Pedido;
 import com.atunes.proyecto.Service.PedidoService;
 
 @RestController
-@RequestMapping("/api/pedidos")
+@RequestMapping("/api/pedido")
 public class PedidoController {
 
     @Autowired

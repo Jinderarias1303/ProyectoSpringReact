@@ -7,5 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.atunes.proyecto.Entity.LoteDefectuoso;
 
 public interface RepositoryLoteDefectuoso extends JpaRepository<LoteDefectuoso, Long> {
-    List<LoteDefectuoso> findByIdLote_Id(Long id); // Método para buscar por ID de lote defectuoso
+    List<LoteDefectuoso> findByIdLote_Id(Long idLote); // Método para buscar por ID de lote defectuoso
 }

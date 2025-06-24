@@ -60,16 +60,16 @@ CREATE TABLE detallePedido (
 
 CREATE TABLE roles (
     id BIGINT PRIMARY KEY AUTO_INCREMENT,
-    tipoRol ENUM('Cliente', 'Operador', 'Administrador') NOT NULL
+    tipoRol ENUM('Cliente', 'Operador', 'Administrador') NOT null UNIQUE
 );
 
 CREATE TABLE usuario (
     id INT PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(50) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
-    idRol BIGINT NOT NULL,
+    id_rol BIGINT NOT NULL,
     estado ENUM('Activo', 'Inactivo') DEFAULT 'Activo',
-    FOREIGN KEY (idRol) REFERENCES roles(id)
+    FOREIGN KEY (id_rol) REFERENCES roles(id)
 );
 
 	CREATE TABLE defecto (
