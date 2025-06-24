@@ -23,7 +23,7 @@ public class LoteService {
         return repositoryLote.findAll();
     }
 
-    // Buscar lote por ID
+      // Buscar lote por ID
     @Transactional(readOnly = true)
     public Optional<Lote> buscarLotePorId(Long id) {
         if (id == null) {
